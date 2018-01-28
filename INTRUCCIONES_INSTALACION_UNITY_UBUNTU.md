@@ -21,7 +21,7 @@ sudo apt-get install mono-devel
 sudo apt-get install monodevelop
 ```
 
-#Para abrir los scripts directamente en monodevelop desde Unity3D (opcional)
+- Para abrir los scripts directamente en monodevelop desde Unity3D (opcional)
 ```
 sudo apt-get install realpath
 ```
