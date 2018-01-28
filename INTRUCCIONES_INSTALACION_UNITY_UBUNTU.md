@@ -7,16 +7,29 @@ https://forum.unity.com/threads/unity-on-linux-release-notes-and-known-issues.35
 
 [enlace referencia](https://forum.unity.com/threads/how-to-install-unity-and-monodevelop-on-ubuntu-16-04-linux.485113/)
 
-#Librerias C#
+- Librerias C#
 
 [Instalar desde la página oficial](http://www.mono-project.com/download/#download-lin)
-O instalar directamente: sudo apt-get install mono-devel (No recomendado).
+O instalar directamente (No recomendado): 
+```
+sudo apt-get install mono-devel
+```
 
-#GUI
 
+- GUI
+```
 sudo apt-get install monodevelop
+```
 
 #Para abrir los scripts directamente en monodevelop desde Unity3D (opcional)
-sudo apt-get install realpath ()
+```
+sudo apt-get install realpath
+```
 
-3º. Si al compilar los scripts da problemas en monodevelop, desplegar el arbol del submenú de la izquierda con el árbol del proyecto, click derecho en el nodo que cuelga directamente de la raíz (Assembly-CSharp), Opciones, Build, General, y cambiar el valor de Target framework a "Mono / .NET 4.5" o uno superior (Los errores que he tenido han sido debido a que este valor estaba puesto a .Net 3.5).
+3º. Si al compilar los scripts da problemas en monodevelop:
+- Desplegar el arbol del submenú de la izquierda con el árbol del proyecto
+- Click derecho en el nodo que cuelga directamente de la raíz (Assembly-CSharp) 
+  - Opciones
+  - Build
+  - General
+  - Cambiar el valor de Target framework a "Mono / .NET 4.5" o uno superior (Los errores que he tenido han sido debido a que este valor estaba puesto a .Net 3.5).
