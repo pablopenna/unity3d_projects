@@ -8,10 +8,12 @@ https://forum.unity.com/threads/unity-on-linux-release-notes-and-known-issues.35
 [enlace referencia](https://forum.unity.com/threads/how-to-install-unity-and-monodevelop-on-ubuntu-16-04-linux.485113/)
 
 #Librerias C#
+
 [Instalar desde la página oficial](http://www.mono-project.com/download/#download-lin)
 O instalar directamente: sudo apt-get install mono-devel (No recomendado).
 
 #GUI
+
 sudo apt-get install monodevelop
 
 #Para abrir los scripts directamente en monodevelop desde Unity3D (opcional)
