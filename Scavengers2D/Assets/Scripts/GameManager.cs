@@ -13,6 +13,14 @@ public class GameManager : MonoBehaviour {
 
 	private bool amItheChosenOne = false;
 
+	//Variables for Player
+	//puntuación del jugador?
+	public int playerFoodPoints = 100;
+	//Aunque sea público, no se mostrara en Unity
+	[HideInInspector] public bool playersTurn = true;
+
+	//---
+
 	// Use this for initialization
 	void Awake () {
 		Debug.Log(instance == null);
@@ -31,8 +39,9 @@ public class GameManager : MonoBehaviour {
 
 			//para que no se destruya cuando se cargue una scene nueva.
 			//que permanezca vivo mientras se ejecute el juego
-			//DontDestroyOnLoad (gameObject);
-			DontDestroyOnLoad (this);
+			//No he comprobado si funciona el 'this'
+			//DontDestroyOnLoad (this);
+			DontDestroyOnLoad (gameObject);
 			boardScript = GetComponent<BoardManager> ();
 			InitGame ();
 		}
@@ -41,6 +50,13 @@ public class GameManager : MonoBehaviour {
 	void InitGame()
 	{
 		boardScript.setupScene (level);
+	}
+
+	public void GameOver()
+	{
+		//Here we disable the GameManager (this intance).
+		//Disabled instances does not update
+		enabled = false;
 	}
 
 	// Update is called once per frame
