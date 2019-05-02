@@ -1,3 +1,6 @@
+# My Unity Projects
+The information in this README is deprecated. Check [this link](https://forum.unity.com/threads/unity-on-linux-release-notes-and-known-issues.350256/).
+
 FECHA: ~~20/10/17~~ 28/01/17
 #
 1. Instalar Unity. Puedes obtener el paquete .deb en el siguiente enlace:
