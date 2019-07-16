@@ -15,11 +15,21 @@ public class AppleTree : MonoBehaviour
     public float secsBetweenAppleDrops = 1f;
 
     private Renderer[] childrenRenderers;
+
+    //CUSTOM
+    //screen width converted to world size
+    private Vector3 worldWidth;
+    //tree width
+    private float treeWidth;
     
     // Start is called before the first frame update
     void Start()
     {
-        childrenRenderers = GetComponentsInChildren<Renderer>();;
+        childrenRenderers = GetComponentsInChildren<Renderer>();
+        //Get width that the tree will traverse- Camera.main returns the camera instance tagged as main camera
+        worldWidth = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f));
+        treeWidth = GetTreeWidth();
+        leftAndRightEdge = worldWidth.x-treeWidth;
         //Drop an apple after 2 seconds
         Invoke("DropApple", 2f);
     }
@@ -44,8 +54,11 @@ public class AppleTree : MonoBehaviour
         }
         //Change direction randomly
         else if( Random.value < chanceToChangeDirections){
-            speed *= -1;
+            //speed *= -1;
         }
+
+        //DEBUG
+        print("debug:"+transform.position.x);
     }
 
     void DropApple(){
@@ -69,5 +82,15 @@ public class AppleTree : MonoBehaviour
             centerPos /= counter;
         }
         return centerPos;
+    }
+
+    float GetTreeWidth(){
+        float maxWidth=0f;
+        foreach(Renderer rend in childrenRenderers){
+            if(rend.bounds.size.x > maxWidth){
+                maxWidth = rend.bounds.size.x;
+            }
+        }
+        return maxWidth;
     }
 }

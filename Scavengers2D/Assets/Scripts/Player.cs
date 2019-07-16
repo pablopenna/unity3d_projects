@@ -56,7 +56,7 @@ public class Player : MovingObject {
 		//Si no es el turno de PLayer, no ejecutamos
 		//el resto de la funcion
 		if (!GameManager.instance.playersTurn) {
-			return;
+			//return;
 		}
 
 		//Indican la direccion en la que se mueve Player
