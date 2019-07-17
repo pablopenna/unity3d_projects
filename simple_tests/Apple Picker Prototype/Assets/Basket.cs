@@ -1,15 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;   //Enables the use of uGUI features
 
 public class Basket : MonoBehaviour
 {
 
     public float speed = 30f;
     public float moveMargin = 5f;
+    public Text scoreGT;
 
     void Start(){
         //moveMargin = this.GetComponent<Renderer>().bounds.size.x * 0.5f;
+
+        //Get reference to ScoreCounter
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        //Get the Text component of said GO
+        scoreGT = scoreGO.GetComponent<Text>();
+        //Initial points = 0
+        scoreGT.text = "0";
     }
 
     // Update is called once per frame
@@ -44,6 +53,10 @@ public class Basket : MonoBehaviour
         GameObject collidedWith = coll.gameObject;
         if(collidedWith.tag == "Apple"){
             Destroy(collidedWith);
+
+            int score = int.Parse(scoreGT.text);
+            score += 100;
+            scoreGT.text = score.ToString();
         }
     }
 }
