@@ -58,7 +58,7 @@ public class AppleTree : MonoBehaviour
         }
 
         //DEBUG
-        print("debug:"+transform.position.x);
+        //print("debug:"+transform.position.x);
     }
 
     void DropApple(){
