@@ -8,7 +8,7 @@ public class Basket : MonoBehaviour
 
     public float speed = 30f;
     public float moveMargin = 5f;
-    public Text scoreGT;
+    private Text scoreGT;
 
     void Start(){
         //moveMargin = this.GetComponent<Renderer>().bounds.size.x * 0.5f;
@@ -25,6 +25,7 @@ public class Basket : MonoBehaviour
     void Update()
     {
         //get mouse position
+        
         Vector3 mousePos2D = Input.mousePosition;
         //The camera's Z postion sets how far to push the mouse into 3D
         mousePos2D.z = -Camera.main.transform.position.z;
