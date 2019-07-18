@@ -54,7 +54,7 @@ public class AppleTree : MonoBehaviour
         }
         //Change direction randomly
         else if( Random.value < chanceToChangeDirections){
-            //speed *= -1;
+            speed *= -1;
         }
 
         //DEBUG
