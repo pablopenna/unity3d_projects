@@ -12,6 +12,15 @@ public class ApplePicker : MonoBehaviour
     public float basketSpacingY = 2f;
     public List<GameObject> basketList;
 
+    void Awake() {
+        // Sync framerate to monitors refresh rate - Must be 0 in order not to ignore Application.targetFrameRate
+        QualitySettings.vSyncCount = 0;
+        //Limit FPS - https://docs.unity3d.com/ScriptReference/Application-targetFrameRate.html
+        Application.targetFrameRate = 60;
+        
+        print("Limit SET !");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
